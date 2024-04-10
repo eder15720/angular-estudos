@@ -6,6 +6,7 @@ import { TesteComponent } from './components/teste/teste.component';
 import { TemplateBindingComponent } from './components/template/template-binding/template-binding.component';
 import { TemplateVariablesComponent } from './components/template/template-variables/template-variables.component';
 import { TemaplteControlFlowComponent } from './components/template/temaplte-control-flow/temaplte-control-flow.component';
+import { TemplateDeferrableViewsComponent } from './components/template/template-deferrable-views/template-deferrable-views.component';
 
 
 @Component({
@@ -18,12 +19,16 @@ import { TemaplteControlFlowComponent } from './components/template/temaplte-con
     TesteComponent, 
     TemplateBindingComponent,
     TemplateVariablesComponent,
-    TemaplteControlFlowComponent
+    TemaplteControlFlowComponent,
+    TemplateDeferrableViewsComponent
   ],
   template: `
     <!--<router-outlet></router-outlet>-->
+    <!--<app-temaplte-control-flow>-->
+
     <h1>Curso de Angular</h1>
-    <app-temaplte-control-flow>
+    <app-template-deferrable-views />
+    
   `,
 })
 export class AppComponent {

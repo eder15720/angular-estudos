@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class TemplateBindingComponent {
   public name = 'Dener Troquatte';
   public title = 'teste';
-  public age = 32;
+  public age = 30;
   public condition = 1 > this.age ? 'teste false' : 'teste true';
   public isDisabled = true;
   public srcValue = '';
