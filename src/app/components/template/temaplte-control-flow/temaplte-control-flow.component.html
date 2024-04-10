@@ -1,104 +1,25 @@
-<p>temaplte-control-flow works!</p>
-
-<h2>Control Flow</h2>
-<h3>IF</h3>
-
-<!-- NOVA FORMA -->
-@if(isTrue){
-    <p>Dener</p>
-    <p>Maria</p>
-    
-}@else if (1 == 1) {
-    Não está correto totalmente
-}@else {
-    Não está correto
-}
-
-
-<!-- FORMA ANTIGA -->
-<ng-container *ngIf="isTrue; else isFalse">
-    <p>Dener</p>
-    <p>Maria</p>
-</ng-container>
-
-<ng-template #isFalse>
-    <p>Não está correto</p>
-</ng-template>
-
-
-
-<h3>IF, FOR</h3>
-
-@if(loadingData$ | async; as data){
-
-    <ul>
-        @for(item of data; track item){
-            <li>{{item}} - Teste</li>
-        }
-    </ul>
-
-}@else {
-
-    <p>Carregando... </p>
-
-}
-
-@for(item of loadingData$ | async; track item){
-    <li>{{item}} - Teste</li>
-}
-
-<!-- FORMA ANTIGA -->
-<ng-container *ngIf="loadingData$ | async as data">
-    <ul>
-        <ng-container *ngFor="let item of data; trackBy: trackByFn"></ng-container>
-    </ul>
-</ng-container>
-
-<ng-template #Loading><p>Carregando...</p></ng-template>
-
-<hr>
-
-@for (
-    item of items; track item.name;
-        let i = $index;
-        let c = $count;
-        let f = $first;
-        let l = $last;
-        let e = $even;
-        let o = $odd;
-    ) {
-        <p>{{ item.name }}</p>    
-        <p>index - {{ i }}</p>
-        <p>count - {{ c }}</p>
-        <p>first - {{ f }}</p>
-        <p>last - {{ l }}</p>
-        <p>even - {{ e }}</p>
-        <p>odd - {{ o }}</p>
+<!--nova forma-->
+<ul>
+    @for (item of itens; track item.name) {
+        <li>{{ item.name }}</li>
+    } @empty {
+        <li>Não contém valores</li>
     }
+</ul>
 
-<hr>
 
-<ng-container
-    *ngFor="
-    let item of items;
-        let i = index;
-        let c = count;
-        let f = first;
-        let l = last;
-        let e = even;
-        let o = odd;
-        TrackBy: trackByFn
-    "
->
-    <p>{{item.name}}</p>    
-    <p>index - {{ i }}</p>
-    <p>count - {{ c }}</p>
-    <p>first - {{ f }}</p>
-    <p>last - {{ l }}</p>
-    <p>even - {{ e }}</p>
-    <p>odd - {{ o }}</p>
 
-</ng-container>
-
-<input #name type="text">
-<button (click)="addNewName(name.value)">Add Name</button>
+<!--antiga forma-->
+<ul>
+    <ng-container *ngIf="itens.length === 0; else itensExist">
+        <li>Não contém valores</li>
+    </ng-container>
+    
+    <ng-template #itensExist>
+        <ng-container *ngFor="let item of itens">
+            <li>
+                {{item.name}}
+            </li>
+        </ng-container>
+    </ng-template>
+</ul>
