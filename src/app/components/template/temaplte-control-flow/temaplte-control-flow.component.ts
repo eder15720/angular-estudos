@@ -1,18 +1,18 @@
-import { CommonModule, NgIf, NgFor  } from '@angular/common';
+import { CommonModule, NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault  } from '@angular/common';
 import { Component } from '@angular/core';
 import { Observable, delay, of } from 'rxjs';
 
 @Component({
   selector: 'app-temaplte-control-flow',
   standalone: true,
-  imports: [CommonModule, NgIf, NgFor],
+  imports: [CommonModule, NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault, ],
   templateUrl: './temaplte-control-flow.component.html',
   styleUrl: './temaplte-control-flow.component.scss'
 })
 export class TemaplteControlFlowComponent {
   public isTrue = true;
-
   public itens: Array<{name: string }> = [{name: 'Dener '}];
+  public switchCondition = 'C';
   public loadingData$: Observable<String[]> = of([
     'item 1',
     'item 2',
