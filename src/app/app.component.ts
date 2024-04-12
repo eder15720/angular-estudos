@@ -7,6 +7,7 @@ import { TemplateBindingComponent } from './components/template/template-binding
 import { TemplateVariablesComponent } from './components/template/template-variables/template-variables.component';
 import { TemaplteControlFlowComponent } from './components/template/temaplte-control-flow/temaplte-control-flow.component';
 import { TemplateDeferrableViewsComponent } from './components/template/template-deferrable-views/template-deferrable-views.component';
+import { SignalsComponent } from './components/signals/signals/signals.component';
 
 
 @Component({
@@ -20,13 +21,16 @@ import { TemplateDeferrableViewsComponent } from './components/template/template
     TemplateBindingComponent,
     TemplateVariablesComponent,
     TemaplteControlFlowComponent,
-    TemplateDeferrableViewsComponent
+    TemplateDeferrableViewsComponent,
+    SignalsComponent,
   ],
   template: `
     <!--<router-outlet></router-outlet>-->
     <!--<app-temaplte-control-flow>-->
 
     <h1>Curso de Angular</h1>
+    <app-temaplte-control-flow />
+    <app-signals />
     <app-template-deferrable-views />
     
   `,
