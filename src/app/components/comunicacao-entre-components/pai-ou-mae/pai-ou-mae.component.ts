@@ -12,4 +12,5 @@ import { OutputComponent } from '../output/output.component';
 })
 export class PaiOuMaeComponent {
   public name = signal("Henrique Eder com signal referenciado");
+  public outputName = signal("Output: sem valor");
 }
