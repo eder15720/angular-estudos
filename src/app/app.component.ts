@@ -9,6 +9,7 @@ import { TemaplteControlFlowComponent } from './components/template/temaplte-con
 import { TemplateDeferrableViewsComponent } from './components/template/template-deferrable-views/template-deferrable-views.component';
 import { SignalsComponent } from './components/signals/signals/signals.component';
 import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai-ou-mae/pai-ou-mae.component';
+import { AngularPipesComponent } from './components/pipes/angular-pipes/angular-pipes.component';
 
 
 @Component({
@@ -24,18 +25,19 @@ import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai
     TemaplteControlFlowComponent,
     TemplateDeferrableViewsComponent,
     SignalsComponent,
-    PaiOuMaeComponent
+    PaiOuMaeComponent,
+    AngularPipesComponent
   ],
   template: `
     <!--<router-outlet></router-outlet>
     <app-temaplte-control-flow>
     <app-temaplte-control-flow />
     <app-signals />
-    <app-template-deferrable-views />-->
+    <app-template-deferrable-views />  
+    <app-pai-ou-mae />-->
 
     <h1>Curso de Angular</h1>
-    <app-pai-ou-mae />
-    
+    <app-angular-pipes />
   `,
 })
 export class AppComponent {
